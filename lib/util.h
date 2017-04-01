@@ -5,7 +5,7 @@
  *
  *  Author M P Vishwas <vishwas.prakasha@gmail.com>
  *
- *  No Lisence; Any body are free to use, edit, and distribute.
+ *  No License; Any body are free to use, edit, and distribute.
  *   
  ******************************************************************************/
 
@@ -21,10 +21,10 @@
 #include <string.h>
 
 /*
- * Macro Definations
+ * Macro Definitions
  */
 
-/* Max 10 bits to represent a number + 1 null */
+/* Maximum 10 bits to represent a number + 1 null */
 #define BITS 11 
 
 #define LOG_ERROR(s, ...) fprintf(strerr, "ERROR occurred at Line number %d"\
@@ -32,7 +32,7 @@
                                         ##__VA_ARGS__)
                                         
 /*
- *  Function Declerations
+ *  Function Decelerations
  */
 
 char * num2bit10array( uint16_t );
