@@ -69,9 +69,9 @@ enum bools {
 };
 
 /**
- *  struct line_data: A structure which the information present in each line,
- *                     read from the file. Serialised structure on a buffer 
- *                     travel over a socket
+ *  struct line_data: A structure which storesnthe information present
+ *                     in each line, read from the file. Serialised structure 
+ *                     on a buffer travel over a socket
  *  Structure Members:
  *  @idx        : Index of the line a.k.a line number starts from 0 (Size:7 bits, Maximum value may be 99).
  *  @operator	: Operation to be performed bitwise-OR or bitwise-AND (Size: 1 bit, 0:OR 1:AND).
@@ -91,6 +91,14 @@ struct line_data {
     uint64_t            : 21;
 };
 
+
+/**
+ *	struct buf_over_socket:	A Structure which is sent over the socket
+ *
+ *	Structure Members:
+ *	@size		: Total size of the data includes @size
+ *	@data		: Actual data
+ */
 struct buf_over_socket {
 	size_t size;
 	char data[ MAX_DATA];

@@ -9,6 +9,8 @@
  *   
  */
 
+#include <readfromfile.h>
+
 /**
  *	read_lines_from_file	- Read the data in file line by line and fills the structure and serialise it to buf
  *
@@ -18,6 +20,7 @@
  *  Return Value			: integer, number of lines read
  *
  */
+
 int read_lines_from_file(char* file_name, void * buf)
 {
 	int idx = 0;
