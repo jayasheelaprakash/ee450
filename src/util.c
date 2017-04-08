@@ -11,7 +11,7 @@
  *   
  */
 
-#include <util.h>
+#include "util.h"
 
 /**
  *  num2bit10array  - Number to bit stream of length 10

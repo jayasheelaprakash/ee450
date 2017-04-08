@@ -10,8 +10,8 @@
  */
  
  
- #ifndef _COMMON_H
- #define _COMMON_H 1
+#ifndef _COMMON_H
+#define _COMMON_H 1
  
 /**
  * Includes
@@ -22,13 +22,12 @@
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
-#include <netdb.h>
-#include <sys/types.h>
-#include <netinet/in.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <sys/wait.h>
 #include <stdint.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/types.h>
+#include <fcntl.h>
 
 /**
  * Macro Definitions
@@ -41,16 +40,16 @@
 #define MAX_LINES 100
 
 /* Maximum size of data sent over the socket */
-#define MAX_DATA ( MAX_LINE * sizeof(struct line_data) )
+#define MAX_DATA ( MAX_LINES * sizeof(struct line_data) )
 
 /* Error logs*/
-#define UNKNOWN_ERROR(s, ...) fprintf(stderr, "ERROR occurred at Line number:"\
-                                              " %d in %s\n%s ", __LINE__,\
-                                               __FILE__, (s, ##__VA_ARGS__))
+#define UNKNOWN_ERROR(msg,...) fprintf(stderr, "ERROR occurred at Line number:"\
+                                              " %d in %s\n"msg, __LINE__,\
+                                               __FILE__, ##__VA_ARGS__)
                                         
-#define KNOWN_ERROR(s) fprintf(stderr, "ERROR occurred at Line number %d "\
+#define KNOWN_ERROR(msg) fprintf(stderr, "ERROR occurred at Line number %d "\
                                         "in %s\n%s : %s\n ", __LINE__, __FILE__\
-                                        , s, strerror(errno))
+                                        , msg, strerror(errno))
 
 
 
@@ -103,5 +102,4 @@ struct buf_over_socket {
 	size_t size;
 	char data[ MAX_DATA];
 };
-
- #endif /* _COMMON_H */
+#endif /* _COMMON_H */

@@ -1,4 +1,4 @@
-3/**
+/**
  *
  *  EE450 Socket Programming Project 
  *      -A university project
@@ -16,7 +16,8 @@
  * Includes
  */
  
-#include <common.h>
+#include "common.h"
+#include "util.h"
  
  
 /**
@@ -31,3 +32,6 @@
  */
 
 int read_lines_from_file(char*, void *);
+
+
+#endif /*_READFROMFILE_H*/

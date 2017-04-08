@@ -9,7 +9,7 @@
  *   
  */
 
-#include <readfromfile.h>
+#include "readfromfile.h"
 
 /**
  *	read_lines_from_file	- Read the data in file line by line and fills the structure and serialise it to buf
@@ -29,8 +29,8 @@ int read_lines_from_file(char* file_name, void * buf)
 	char *start = NULL;
 	struct line_data local = { 0 };
 	struct line_data *ptr_buf = buf;
-	char line[ MAX_CHAR_LINE] = { '\0' };
-	struct line_data *ptr_line_data = NULL;
+	char line[ MAX_CHARS_LINE] = { '\0' };
+	struct line_data *ptr_line_data = &local;
 	size_t size = sizeof(struct line_data);
 	
 	/* open the file */
@@ -42,7 +42,7 @@ int read_lines_from_file(char* file_name, void * buf)
 	}
 	
 	/* read each line from file and fill the structure and serialise */
-	while ( fgets( line, MAX_CHARS_LINE, fh )_) {
+	while ( fgets( line, MAX_CHARS_LINE, fh ) ) {
 		/* operator*/
 		if ( line[0] == 'a' ) {
 			local.operator = AND;
