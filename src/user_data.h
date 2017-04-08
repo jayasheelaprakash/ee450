@@ -16,7 +16,7 @@
 
 
 #ifndef _USER_DATA_
-#define _USER_DATA 1
+#define _USER_DATA_ 1
 
 /* USC_ID*/
 #define USC_ID 121 
